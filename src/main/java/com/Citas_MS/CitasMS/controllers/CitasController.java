@@ -18,7 +18,7 @@ public class CitasController {
     /*
     OBTENER una Cita por Usuario
     Tipo: GET
-    url: "/citasUsuario/{pacianteId}"
+    url: "/cita/{id}"
     Path Variable: le mando Cita al PacianteId
     Que me debe devolver: Cita
      */
@@ -65,12 +65,12 @@ public class CitasController {
     Que me debe devolver: Cita
      */
 
-    @PutMapping("/cita/{Id}")
-    public Citas updateCitas(@PathVariable String Id, @RequestBody Citas new_citas){
-        Citas old_citas = repository.findById(Id).orElse(null);
+    @PutMapping("/cita/{id}")
+    public Citas updateCitas(@PathVariable String id, @RequestBody Citas new_citas){
+        Citas old_citas = repository.findById(id).orElse(null);
 
         //        esto actualiza el procedimiento del Paciente
-        old_citas.setProcedimientoFormulado(new_citas.getProcedimientoFormulado());
+        old_citas.setEspecialidad(new_citas.getEspecialidad());
         return repository.save(old_citas);
     }
 

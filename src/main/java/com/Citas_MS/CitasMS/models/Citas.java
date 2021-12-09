@@ -4,30 +4,22 @@ import java.util.Date;
 
 public class Citas {
     @Id
-    private String id;
+    private String Id;
     private String pacienteId;
     private String profesionalId;
     private Date fecha;
-    private Date hora;
-    private String procedimientoFormulado;
-    private String medicamentosFormulados;
+    private String especialidad;
 
-    public Citas(String id, String pacienteId, String profesionalId, Date fecha, Date hora, String procedimientoFormulado, String medicamentosFormulados) {
-        this.id = id;
+    public Citas(String Id, String pacienteId, String profesionalId, Date fecha, String procedimientoFormulado) {
+        this.Id = Id;
         this.pacienteId = pacienteId;
         this.profesionalId = profesionalId;
         this.fecha = fecha;
-        this.hora = hora;
-        this.procedimientoFormulado = procedimientoFormulado;
-        this.medicamentosFormulados = medicamentosFormulados;
+        this.especialidad = procedimientoFormulado;
     }
 
     public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
+        return Id;
     }
 
     public String getPacienteId() {
@@ -54,27 +46,11 @@ public class Citas {
         this.fecha = fecha;
     }
 
-    public Date getHora() {
-        return hora;
+    public String getEspecialidad() {
+        return especialidad;
     }
 
-    public void setHora(Date hora) {
-        this.hora = hora;
-    }
-
-    public String getProcedimientoFormulado() {
-        return procedimientoFormulado;
-    }
-
-    public void setProcedimientoFormulado(String procedimientoFormulado) {
-        this.procedimientoFormulado = procedimientoFormulado;
-    }
-
-    public String getMedicamentosFormulados() {
-        return medicamentosFormulados;
-    }
-
-    public void setMedicamentosFormulados(String medicamentosFormulados) {
-        this.medicamentosFormulados = medicamentosFormulados;
+    public void setEspecialidad(String especialidad) {
+        this.especialidad = especialidad;
     }
 }
