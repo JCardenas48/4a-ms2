@@ -23,7 +23,7 @@ public class CitasController {
     Que me debe devolver: Cita
      */
 
-    @GetMapping("/citasUsuario/{Id}")
+    @GetMapping("/cita/{Id}")
     public Optional <Citas> getCitas(@PathVariable String Id) {
         return this.repository.findById(Id);
     }
@@ -37,7 +37,7 @@ public class CitasController {
     Que me debe devolver: Cita
      */
 
-    @PostMapping("/citas")
+    @PostMapping("/cita/")
     public Citas newCitas(@RequestBody Citas citas){
         return this.repository.save(citas);
 
@@ -51,7 +51,7 @@ public class CitasController {
     Que me debe devolver: Una Cancelacion
      */
 
-    @DeleteMapping("/citas/{pacientId}")
+    @DeleteMapping("/cita/{pacientId}")
         public void deleteCitas(@PathVariable String patienteId){
             repository.deleteById(patienteId);
     }
@@ -65,7 +65,7 @@ public class CitasController {
     Que me debe devolver: Cita
      */
 
-    @PutMapping("/citas/{Id}")
+    @PutMapping("/cita/{Id}")
     public Citas updateCitas(@PathVariable String Id, @RequestBody Citas new_citas){
         Citas old_citas = repository.findById(Id).orElse(null);
 
